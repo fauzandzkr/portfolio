@@ -14,12 +14,12 @@
         <nav class="logo-n-btn">
             <img src="./assets/img/logo-wave-greybg.jpg" alt="" class="logo">
             <img src="./assets/img/button-bar.png" alt="" class="btn" id="btn">
-            <img src="./assets/img/one-line.png" alt="" class="line-btn" id="btn">
+            <img src="./assets/img/one-line.png" alt="" class="line-btn" id="btn2">
         </nav>
         <nav class="main-nav">
             <ul>
                 <li>
-                    <a href="#home">
+                    <a href="#">
                         <img src="./assets/img/icon-home.png" alt="">
                         <span>Home</span> 
                     </a>
@@ -101,7 +101,13 @@
     
         closeBtn.addEventListener("click", ()=>{
             header.classList.toggle("open");
+        });
 
+        let header2 = document.querySelector('.header');
+        let closeBtn2 = document.querySelector('#btn2');
+    
+        closeBtn2.addEventListener("click", ()=>{
+            header2.classList.toggle("up");
         });
     </script>
 </body>
