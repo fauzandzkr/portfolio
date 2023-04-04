@@ -123,7 +123,9 @@ body{
     }
 
 
-
+    main{
+        height: 1000vh;
+    }
 
     main .home img{
         width: 70%;
@@ -210,7 +212,52 @@ body{
         color: #2e2e2e;
         font-weight: bold;
     }
+    main .certificate{
+        width: 90%;
+        /* background-color: #414141; */
+        margin: 0 auto;
+    }
+    main .certificate .list{
+        background-color: #c7c7c7;
+        border-radius: 15px;
+        margin-bottom: 2vh;
+    }
+    main .certificate .list a{
+        display: flex;
+        text-decoration: none;
+        padding: 10px;
+    }
+    main .certificate .list a .link-img{
+        width: 30%;
+        margin: auto 0;
+    }
+    main .certificate .list a .link-img img{
+        height: 8vh;
+        width: 100%;
+        display: block;
+        margin: auto 0;
+    }
+    main .certificate .list a .link-title{
+        width: 67%;
+        margin-left: 3%;
+        color: #2e2e2e;
+        font-family: Verdana, Geneva, Tahoma, sans-serif;
+        /* background-color: #28d811; */
+    }
+    main .certificate .list a .link-title h4{
+        padding: 5 3% 0 3%;
+        font-size: 13px ;
 
+    }
+    main .certificate .list a .link-title .showmore{
+        padding-top: 10px;
+        color: #797979;
+    }
+    main .certificate .list a .link-title h5{
+        display: flex;
+        justify-content: flex-end;
+        padding: 0px 5px 5px 0;
+    }
 
 }
 
