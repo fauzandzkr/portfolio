@@ -81,7 +81,7 @@
         
 
 
-        <div class="about">
+        <div class="about" id="about">
             <h3>ABOUT</h3>
             <p>
                 Mahasiswa Teknik Informatika yang memiliki
@@ -100,9 +100,46 @@
             <img src="./assets/img/resume-ss.png" alt="">
         </div>
 
-        <div class="certificate">
+
+        
+        <div class="certificate" id="certificate">
             <h3>CERTIFICATE</h3>
-            
+            <div class="list">
+                <a href="" onclick="comingSoon()">
+                    <div class="link-img">
+                        <img src="./assets/img/certificate/toefl.jpg" alt="">
+                    </div>
+                    <div class="link-title">
+                        <h4>HTML Coding For Beginners Course: Learn HTML in 1 Hour</h4>
+                        <h4 class="showmore">+ Show More</h4>
+                        <h5>BitDegree</h5>
+                    </div>
+                </a>
+            </div>
+            <div class="list">
+                <a href="" onclick="comingSoon()">
+                    <div class="link-img">
+                        <img src="./assets/img/certificate/bitdegree-css_beginner.jpeg" alt="">
+                    </div>
+                    <div class="link-title">
+                        <h4>HTML Coding For Beginners Course: Learn HTML in 1 Hour</h4>
+                        <h4 class="showmore">+ Show More</h4>
+                        <h5>BitDegree</h5>
+                    </div>
+                </a>
+            </div>
+            <div class="list">
+                <a href="" onclick="comingSoon()">
+                    <div class="link-img">
+                        <img src="./assets/img/certificate/bitdegree_html_css.jpeg" alt="">
+                    </div>
+                    <div class="link-title">
+                        <h4>HTML Coding For Beginners Course: Learn HTML in 1 Hour</h4>
+                        <h4 class="showmore">+ Show More</h4>
+                        <h5>BitDegree</h5>
+                    </div>
+                </a>
+            </div>
         </div>
         
 
@@ -131,6 +168,11 @@
         closeBtn2.addEventListener("click", ()=>{
             header2.classList.toggle("up");
         });
+
+
+        function comingSoon(){
+            alert('the description will be ready soon');
+        }
     </script>
 </body>
 </html>
