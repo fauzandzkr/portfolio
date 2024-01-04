@@ -1,0 +1,246 @@
+// $alert: (
+//     'danger': red,
+//     'success': green,
+//     'warning': orange
+// );
+
+// $blue: blue;
+
+// header{
+//     background-color: map-get($alert, 'danger');
+//     h1{
+//         // background-color: $blue;
+//         &:hover{
+//             background-color: black;
+//         }
+//     }
+// }
+
+// .main{
+//     #{&}-head{
+//         color: red;
+//         .text{
+//             color: rgb(255, 238, 0);
+//         }
+//     }
+//     & &-content{
+//         color: rgb(21, 255, 0);
+//     }
+// }
+
+// COLOR LIBRARY
+$white      : #ffffff;
+$main-color : #EFEFF1;
+$dark-text  : #4A4A4A;
+$dark-bg    : #798394;
+$blue-theme : #0075FF;
+
+*{
+    padding: 0;
+    margin: 0;
+    box-sizing: border-box;
+    font-family: system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
+}
+html{
+    scroll-behavior: smooth;
+}
+body{
+    background-color: $main-color;
+}
+
+/* START Extra small devices (phones, 600px and down) */
+@media only screen and (max-width: 600px) {
+    
+    .header{
+        margin-top      : 20px;
+        display         : flex;
+        place-items     : center;
+        justify-content : space-between;
+        padding         : 7px 5%;
+        &-logo{
+            display: flex;
+            // background-color: #6e78ff;
+            place-items: center;
+            &-img{
+                width: 8vw;
+                height: 8vw;
+                margin-right: 2vw;
+            }
+            p{
+                // background-color: aqua;
+                font-size: 7vw;
+                font-weight: 600;
+                padding-top: 1vw;
+                color: #4a4a4a;
+            }
+        }
+        &-button{
+            border: none;
+            img{
+                width: 8vw;
+            }
+        }
+        &-popupContainer{
+            position: fixed;
+            width: 100%;
+            height: 100%;
+            background: rgba(0, 0, 0, 0.8);
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            opacity: 0;
+            pointer-events: none;
+            top: 0;
+            right: 0;
+            bottom: 0;
+            left: 0;
+            &.active{
+                opacity: 1;
+                pointer-events: auto;
+                transition: .4s ease;
+                .header-popupContainer-popupBox {
+                    transform: scale(1);
+                    transition: .3s ease;
+                    /* transition-delay: .1s; */
+                }
+            }
+            &-popupBox{
+                display: flex;
+                flex-direction: column;
+                justify-content: center;       
+                height: 45vh;
+                width: 80vw;
+                background: #f2f2f2;
+                border-radius: 9px;
+                box-shadow: 0 0 10px rgba(0, 0, 0, .1);
+                padding: 20px;
+                transform: scale(0);
+                &-closeBtn{
+                    width: 100%;
+                    height: 5vh;
+                    background: #6e78ff;
+                    border-radius: 6px;
+                    border: none;
+                    outline: none;
+                    box-shadow: 0 0 10px rgba(0, 0, 0, .1);
+                    cursor: pointer;
+                    font-size: 4.5vw;
+                    color: #f2f2f2;
+                    font-weight: 500;
+                    margin-top: 3vh;
+                }
+            }
+        }
+    }
+
+    .main{
+        margin-top: 5vh;
+        &-home{
+            // background-color: #6e78ff;
+            &-photo-profile{
+                width: 80vw;
+                display: block;
+                margin: 0 auto;
+            }
+            &-nameDesc{
+                background-color: $white;
+                margin: 0 auto;
+                width: 90%;
+                border-radius: 20px;
+                color: $dark-text;
+                padding: 5vw 5vw 10vw 5vw;
+                text-align: right;
+                box-shadow: 1.5px 2px 4px rgba(0, 0, 0, 0.30);
+                &-h2{
+                    text-align: left;
+                }
+                &-h1{
+                    color: $blue-theme;
+                    font-size: 9vw;
+                    text-align: left;
+                }
+                &-p{
+                    font-size: 4.5vw;
+                    font-weight: 500;
+                    margin-bottom: 4vh;
+                    text-align: left;
+                    &-span{
+                        color: $blue-theme;
+                    }
+                }
+                &-a{
+                    width: 50vw;
+                    border-radius: 10px;
+                    border: 1.5px solid $dark-text;
+                    color: $dark-text;
+                    text-decoration: none;
+                    padding: 2vw 5.5vw;
+                    margin: 0vh 0 20vw 0vw;
+                    font-size: 5vw;
+                    font-weight: 500;
+                    box-shadow: 1.5px 2px 4px rgba(0, 0, 0, 0.50);
+                }
+            }
+        }
+        &-about{
+            margin-top: 1vh;
+            background-color: $dark-bg;
+            &-h1{
+                margin-top: 2vh;
+                color: $main-color;
+                text-align: center;
+            }
+            &-p{
+                margin: 2vh 0;
+                padding: 0 10vw;
+                color: $main-color;
+                font-size: 4.5vw;
+            }
+            & svg{
+                display: block;
+            }
+        }
+        &-skills{
+            &-h1{
+                margin: 2vh 0 3vh 0;
+                color: $dark-bg;
+                text-align: center;
+            }
+            &-list{
+                display: flex;
+                flex-wrap: wrap;
+                justify-content:space-evenly;
+                
+                &-card{
+                    border: 1px solid $dark-bg;
+                    border-radius: 13px;
+                    width: 42vw;
+                    display: inline-flex;
+                    align-items: center;
+                    margin-bottom: 17px;
+                    padding: 1.5vw 2.5vw;
+                    box-shadow: 1.5px 2px 4px rgba(0, 0, 0, 0.30);
+                    &-img{
+                        width: 8vw;
+                        height: 8vw;
+                        place-content: center;
+                    }
+                    &-title{
+                        margin-left: 5px;
+                        & h2{
+                            font-size: 5vw;
+                        }
+                        & h3{
+                            font-size: 4vw;
+                            font-weight: 400;
+                            color: $dark-bg;
+                        }
+                    }
+                }
+            }
+        }
+        
+    }
+}
+/* END Extra small devices (phones, 600px and down) */
+

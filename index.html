@@ -1,0 +1,120 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="css/style.css">
+    <title>Fauzan Dzikri</title>        
+</head>
+<body>
+    <!-- START NAVBAR -->
+    <header class="header" id="header">
+        <div class="header-logo">
+            <img src="assets/img/logo_4a4a4a.png" alt="" class="header-logo-img">
+            <p>ZAN</p>
+        </div>
+        <button class="header-button">
+                <img src="assets/icon/hamburger_4A4A4A.png" alt="hamburger" class="img-nav2" >
+        </button>
+
+        <div class="header-popupContainer">
+            <div class="header-popupContainer-popupBox">
+                <button class="home">
+                    <img src="assets/icon/home.png" alt="">Home
+                </button>
+                <button class="about">
+                    <img src="assets/icon/about.png" alt="">About
+                </button>
+                <button class="certificate">
+                    <img src="assets/icon/vehicle.png" alt="">Certificate
+                </button>
+                <button class="portfolio">
+                    <img src="assets/icon/calendar.png" alt="">Portfolio
+                </button>
+                <button class="contact">
+                    <img src="assets/icon/tnc.png" alt="">Contact
+                </button>
+                <button class="header-popupContainer-popupBox-closeBtn">Close</button>
+            </div>
+        </div>
+
+    </header>
+    <!-- END NAVBAR -->
+
+    <main class="main">
+        <div class="main-home">
+            <img class="main-home-photo-profile" src="/assets/img/photo-profile.png" alt="">
+            <div class="main-home-nameDesc">
+                <h2 class="main-home-nameDesc-h2">Hi, I'm</h2>
+                <h1 class="main-home-nameDesc-h1">Fauzan Dzikri</h1>
+                <p class="main-home-nameDesc-p"><span class="main-home-nameDesc-p-span">Front End</span> developer based in Bandung, Indonesia.</p>
+                <a class="main-home-nameDesc-a" href="https://drive.google.com/file/d/1vIcaeRKM6mYLspWZ-98pZo8GGT2ntXOW/view?usp=drive_link">View CV</a>
+            </div>
+        </div>
+
+        <div class="main-about">
+            <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1440 319"><path fill="#EFEFF1" fill-opacity="1" d="M0,160L80,144C160,128,320,96,480,112C640,128,800,192,960,197.3C1120,203,1280,149,1360,122.7L1440,96L1440,0L1360,0C1280,0,1120,0,960,0C800,0,640,0,480,0C320,0,160,0,80,0L0,0Z"></path></svg>
+            <h1 class="main-about-h1">ABOUT</h1>
+            <p class="main-about-p">Mahasiswa Teknik Informatika yang memiliki keinginan untuk terus belajar, khususnya bidang Front End Development untuk meningkatkan usability dan meningkatkan efisiensi kerja. Saya mampu bekerja dalam tim, dan mempunyai motivasi tinggi bekerja dalam bidang informasi dan teknologi. Saya dapat bekerja secara jujur, cepat, teliti, dan mampu bekerja di bawah tekanan.</p>
+            <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1440 319"><path fill="#EFEFF1" fill-opacity="1" d="M0,160L80,144C160,128,320,96,480,112C640,128,800,192,960,197.3C1120,203,1280,149,1360,122.7L1440,96L1440,320L1360,320C1280,320,1120,320,960,320C800,320,640,320,480,320C320,320,160,320,80,320L0,320Z"></path></svg>
+        </div>
+
+        <div class="main-skills">
+            <h1 class="main-skills-h1">TECHNICAL SKILLS</h1>
+            <div class="main-skills-list">
+                <!-- DAFTAR SKILL AKAN DITAMPILKAN DISINI -->
+            </div>
+        </div>
+    </main>
+
+    <script>
+        const showPopup      = document.querySelector('.header-button');
+        const popupContainer = document.querySelector('.header-popupContainer');
+        const closeBtn       = document.querySelector('.header-popupContainer-popupBox-closeBtn');
+
+        showPopup.onclick = () => {
+            popupContainer.classList.add('active');
+            // document.body.classList.add('no-scroll');
+            popupContainer.onclick = () => {
+                popupContainer.classList.remove('active');
+                // document.body.classList.remove('no-scroll');
+            }
+        }
+        closeBtn.onclick = () => {
+            popupContainer.classList.remove('active');
+            // document.body.classList.remove('no-scroll');
+        }
+
+        
+
+        const skillsList = document.querySelector(".main-skills-list");
+        const skills = [
+            { image: "assets/img/logo-lang-html.png", lang:"HTML", level:"Intermediate" },
+            { image: "assets/img/logo-lang-css.png", lang:"CSS", level:"Intermediate" },
+            { image: "assets/img/logo-lang-javascript.png", lang:"Javascript", level:"Basic" },
+            { image: "assets/img/logo-lang-php.png", lang:"PHP", level:"Basic" },
+            { image: "assets/img/logo-lang-python.png", lang:"Python", level:"Basic" },
+            { image: "assets/img/logo-lang-mysql.png", lang:"MySQL", level:"Basic" },
+            { image: "assets/img/logo-framew-bootstrap.png", lang:"Bootstrap", level:"Basic" },
+            { image: "assets/img/logo-design-figma.png", lang:"Figma", level:"Intermediate" }
+        ];
+
+        skills.forEach((skillsItem) => {
+            const skillsCard = document.createElement("div");
+
+            skillsCard.innerHTML = `
+                <div class="main-skills-list-card">
+                    <img class="main-skills-list-card-img" src="${skillsItem.image}">
+                    <div class="main-skills-list-card-title">
+                        <h2>${skillsItem.lang}</h2>
+                        <h3>${skillsItem.level}</h3>
+                    </div>
+                </div>
+            `;
+            skillsList.appendChild(skillsCard);
+        });        
+
+    </script>
+
+</body>
+</html>
