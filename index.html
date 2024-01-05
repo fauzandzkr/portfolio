@@ -41,9 +41,10 @@
     </header>
     <!-- END NAVBAR -->
 
+    <!-- START MAIN -->
     <main class="main">
         <div class="main-home">
-            <img class="main-home-photo-profile" src="assets/img/photo-profile.png" alt="">
+            <img class="main-home-photo-profile" src="/assets/img/photo-profile.png" alt="">
             <div class="main-home-nameDesc">
                 <h2 class="main-home-nameDesc-h2">Hi, I'm</h2>
                 <h1 class="main-home-nameDesc-h1">Fauzan Dzikri</h1>
@@ -65,7 +66,44 @@
                 <!-- DAFTAR SKILL AKAN DITAMPILKAN DISINI -->
             </div>
         </div>
+
+        <div class="main-certif">
+            <h1 class="main-certif-h1">CERTIFICATE</h1>
+            <div class="main-certif-list">
+                <!-- DAFTAR CERTIFICATE AKAN DITAMPILKAN DISINI -->
+            </div>
+        </div>
+
+        <div class="main-provider">
+            <h1 class="main-provider-h1">CERTIFICATION PROVIDER</h1>
+            <div class="main-provider-list">
+                <!-- DAFTAR PROVIDER AKAN DITAMPILKAN DISINI -->
+            </div>
+        </div>
+
+        <div class="main-project">
+            <h1 class="main-project-h1">PROJECT</h1>
+            <div class="main-project-list">
+                <!-- DAFTAR PROJECT AKAN DITAMPILKAN DISINI -->
+            </div>
+        </div>
+
+        <div class="main-contact">
+            <h1 class="main-contact-h1">CONTACT</h1>
+            <p>I'm always open to new opportunities, collaborations, and creative challenges. If you have a project idea or would like to discuss how we can work together, don't hesitate to get in touch.</p>
+            <div class="main-contact-list">
+                <!-- DAFTAR CONTACT AKAN DITAMPILKAN DISINI -->
+            </div>
+        </div>
     </main>
+    <!-- END MAIN -->
+
+    <!-- START FOOTER -->
+    <footer class="footer">
+        <p>© 2024. Fauzan Dzikri Nugroho.<br>
+            All right reserve</p>
+    </footer>
+    <!-- END FOOTER -->
 
     <script>
         const showPopup      = document.querySelector('.header-button');
@@ -86,7 +124,7 @@
         }
 
         
-
+        // START LIST SKILLS
         const skillsList = document.querySelector(".main-skills-list");
         const skills = [
             { image: "assets/img/logo-lang-html.png", lang:"HTML", level:"Intermediate" },
@@ -96,6 +134,7 @@
             { image: "assets/img/logo-lang-python.png", lang:"Python", level:"Basic" },
             { image: "assets/img/logo-lang-mysql.png", lang:"MySQL", level:"Basic" },
             { image: "assets/img/logo-framew-bootstrap.png", lang:"Bootstrap", level:"Basic" },
+            { image: "assets/img/logo-design-figma.png", lang:"Figma", level:"Intermediate" },
             { image: "assets/img/logo-design-figma.png", lang:"Figma", level:"Intermediate" }
         ];
 
@@ -112,7 +151,137 @@
                 </div>
             `;
             skillsList.appendChild(skillsCard);
-        });        
+        });    
+        // END LIST SKILLS
+
+
+        // START LIST CERTIFICATE
+        const certifList = document.querySelector(".main-certif-list");
+        const certifs = [
+            {image: "assets/img/certificate/bitdegree-css_beginner.jpeg", title: "HTML Coding For Beginners Course: Learn HTML in 1 Hour", id: "0000000", date: "11 March 2023"},
+            {image: "assets/img/certificate/bitdegree-css_beginner.jpeg", title: "HTML Coding For Beginners Course: Learn HTML in 1 Hour", id: "0000000", date: "11 March 2023"},
+            {image: "assets/img/certificate/bitdegree-css_beginner.jpeg", title: "HTML Coding For Beginners Course: Learn HTML in 1 Hour", id: "0000000", date: "11 March 2023"},
+            {image: "assets/img/certificate/bitdegree-css_beginner.jpeg", title: "HTML Coding For Beginners Course: Learn HTML in 1 Hour", id: "0000000", date: "11 March 2023"},
+            {image: "assets/img/certificate/bitdegree-css_beginner.jpeg", title: "HTML Coding For Beginners Course: Learn HTML in 1 Hour", id: "0000000", date: "11 March 2023"},
+            {image: "assets/img/certificate/bitdegree-css_beginner.jpeg", title: "HTML Coding For Beginners Course: Learn HTML in 1 Hour", id: "0000000", date: "11 March 2023"}
+        ];
+
+        certifs.forEach((certifItem) => {
+            const certifCard = document.createElement('div');
+
+            certifCard.innerHTML = `
+                <div class="main-certif-list-card">
+                    <img class="main-certif-list-card-retangle" src="assets/img/retangle.png">
+                    <img class="main-certif-list-card-img" src="${certifItem.image}">
+                    <div class="main-certif-list-card-title">
+                        <h1>${certifItem.title}</h1>
+                        <h2>ID-${certifItem.id}</h2>
+                        <h3>${certifItem.date}</h3>
+                        </div>
+                        <img class="main-certif-list-card-icon" src="assets/icon/arrow-launch.png">
+                </div>
+            `;
+            certifList.appendChild(certifCard);
+        });
+        // END LIST CERTIFICATE
+
+
+        // START LIST CERTIFICATION PROVIDER
+        const providerList = document.querySelector(".main-provider-list");
+        const providers = [
+            {image: "assets/img/logo-bitdegree.png", name: "BitDegree", desc: "Our certificates of completion will help you stay ahead of the game: with online certificates you'll be able to prove your professional growth to anyone."},
+            {image: "assets/img/logo-sololearn.png", name: "Solo Learn", desc: "Sololearn is a free learning platform that helps millions of people around the world to learn the hottest tech skills. We help you bridge the digital skills gap to a future life-changing career."},
+            {image: "assets/img/logo-elskill.png", name: "Elskill", desc: "Elskill is an online English course platform using an LMS (Learning Management System) system which makes it easier for participants to learn English."}
+        ];
+
+        providers.forEach((providerItem) => {
+            const providerCard = document.createElement("div");
+
+            providerCard.innerHTML = `
+                <div class="main-provider-list-card">
+                    <img src="${providerItem.image}" alt="">
+                    <div class="main-provider-list-card-title">
+                        <h1>${providerItem.name}</h1>
+                        <p>${providerItem.desc}</p>
+                    </div>
+                </div>
+            `;
+            providerList.appendChild(providerCard);
+        });
+        // END LIST CERTIFICATION PROVIDER
+
+
+
+        // START LIST PROJECT
+        const projectList = document.querySelector('.main-project-list');
+        const projects = [
+            {   name        : 'WOMBLY', 
+                image       : 'assets/img/project.png',
+                desc        : 'Wombly merupakan website streaming music dengan berbagai pilihan genre yang akan menemani aktivitas anda.', 
+                detailsLink : ' https://fauzandzkr.github.io/DimasRentCar/', 
+                visitLink   : ' https://fauzandzkr.github.io/DimasRentCar/'},
+
+            {   name        : 'DIMAS RENT CAR', 
+                image       : 'assets/img/project.png', 
+                desc        : 'Wombly merupakan website streaming music dengan berbagai pilihan genre yang akan menemani aktivitas anda.', 
+                detailsLink : ' https://fauzandzkr.github.io/DimasRentCar/', 
+                visitLink   : ' https://fauzandzkr.github.io/DimasRentCar/'}
+        
+
+        ];
+
+        projects.forEach((projectItem) => {
+            const projectCard = document.createElement('div');
+
+            projectCard.innerHTML = `
+                <div class="main-project-list-card">
+                    <h1>${projectItem.name}</h1>
+                    <div class="main-project-list-card-layer2">
+                        <img src="${projectItem.image}" alt="">
+                        <p>${projectItem.desc}</p>
+                        <div class="main-project-list-card-layer2-link">
+                            <a class="main-project-list-card-layer2-link-detail" href="${projectItem.detailsLink}">Details</a>
+                            <a class="main-project-list-card-layer2-link-visit" href="${projectItem.visitLink}">Visit Website</a>
+                        </div>
+                    </div>
+                </div>
+            `;
+            projectList.appendChild(projectCard);
+        });
+        // END LIST PROJECT
+
+
+
+        // START LIST CONTACT
+        const contactList = document.querySelector('.main-contact-list');
+        const contacts = [
+            {logo: "assets/img/logo-github.png", name: "GitHub", link:"google.com"},
+            {logo: "assets/img/logo-instagram.png", name: "Instagram", link:"google.com"},
+            {logo: "assets/img/logo-telegram.png", name: "Telegram", link:"google.com"},
+            {logo: "assets/img/logo-linkedin.png", name: "LinkedIn", link:"google.com"},
+            {logo: "assets/img/logo-gmail.png", name: "Gmail", link:"google.com"}
+        ];
+        
+        // START LIST CONTACT
+        contacts.forEach((contactItem) => {
+            const contactCard = document.createElement("div");
+
+            contactCard.innerHTML = `
+            <a href='${contactItem.link}'>
+                <div class="main-contact-list-card" >
+                    <div class="main-contact-list-card-mid">
+                        <img src="${contactItem.logo}" alt="">
+                        <h3>${contactItem.name}</h3>
+                    </div>
+                </div>
+            </a>
+            `;
+            contactList.appendChild(contactCard);
+        });
+        // END LIST CONTACT
+
+
+
 
     </script>
 
